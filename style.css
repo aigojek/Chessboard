@@ -1,0 +1,474 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-user-drag: none;
+}
+
+
+@font-face {
+    font-family: czciona;
+    src: url(NotoSansMandaic-Regular.ttf);
+}
+
+body
+{
+    display: flex;
+    background-color: #7f5539;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#kordypion
+{
+    display: flex;
+    width: 30px;
+    height: 800px;
+    position: absolute;
+    transform: translateX(215px);
+    font-family: czciona;
+    font-size: 25px;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-weight: bolder;
+    color: #fefae0;
+    pointer-events: none;
+}
+
+#kordypion > * 
+{
+    margin-top: 35.5px;
+    margin-bottom: 35.5px;
+}
+
+#kordypoziom
+{
+    display: flex;
+    width: 800px;
+    height: 30px;
+    position: absolute;
+    transform: translate(-200px, 410px);
+    font-family: czciona;
+    font-size: 25px;
+    flex-direction: row;
+    font-weight: bolder;
+    color: #fefae0;
+    pointer-events: none;
+}
+
+#kordypoziom > * 
+{
+    position: relative;
+    top: 15px;
+    width: 10px;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+#zegarczarny, #zegarbialy
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 17px;
+    position: absolute;
+    font-family: czciona;
+    color: #7f5539;
+    font-size: 50px;
+    font-weight: bolder;
+    height: 70px;
+    width: 200px;
+    background-color: #dda15e;
+    border-radius: 30px;
+    pointer-events: none;
+}
+
+#zegarczarny
+{
+    transform: translate(600px,-365px);
+}
+
+#zegarbialy
+{
+    transform: translate(600px, 365px);
+}
+
+#szachownica
+{
+    display: flex;
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    flex-wrap: wrap;
+    transform: translateX(-200px);
+}
+
+#win
+{
+    display: flex;
+    position: absolute;
+    top: 290px;
+    left: 150px;
+    height: 220px;
+    width: 500px;
+    background-color: #7f5539;
+    font-size: 44px;
+    text-wrap: wrap;
+    font-family: czciona;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    border-radius: 25px;
+    color: #fefae0;
+    pointer-events: none;
+}
+
+#wykonane_ruchy
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 600px;
+    width: 400px;
+    transform: translateX(600px);
+    background-color: #dda15e;
+    overflow-y: scroll;
+}
+
+#wykonane_ruchy::-webkit-scrollbar
+{
+    width: 10px;
+}
+
+#wykonane_ruchy::-webkit-scrollbar-thumb
+{
+    background-color: #7f5539;
+    border: 1px solid #dda15e;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.tabela
+{
+    display: flex;
+    width: 360px;
+    height: 35px;
+    border-radius: 20px;
+    margin-top: 35px;
+    margin-left: 20px;
+    background-color: #7f5539;
+}
+
+.ruch_czarny, .ruch_bialy
+{
+    display: flex;
+    background-color: #7f5539;
+    height: 35px;
+    width: 180px;
+    border-radius: 0 20px 20px 0;
+    font-size: 25px;
+    font-family: czciona;
+    align-items: center;
+    color: #fefae0;
+    font-weight: bold;
+    user-select: none;
+}
+
+.ruch_bialy > * 
+{
+    position: relative;
+    top: 5px;
+    left: 10px;
+    pointer-events: none;
+}
+
+.ruch_bialy p:nth-child(2)
+{
+    left: 35%;
+}
+
+.ruch_czarny > * 
+{
+    position: relative;
+    top: 5px;
+    left: 70px;
+    pointer-events: none;
+}
+
+.ruch_bialy
+{
+    border-radius: 20px 0 0 20px;
+}
+
+.ruch_czarny:hover, .ruch_bialy:hover
+{
+    filter: brightness(1.2);
+} 
+
+.promocjaczarna
+{
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #dda15e;
+    position: absolute;
+    min-width: 100px;
+    width: 100px;
+    height: 400px;
+    transform: translateY(-400px);
+    cursor: pointer;
+}
+.promocjabiala
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #fefae0;
+    position: absolute;
+    min-width: 100px;
+    width: 100px;
+    height: 400px;
+    transform: translateY(-100px);
+    cursor: pointer;
+}
+
+.poleb
+{
+    background-color: #fefae0;
+    min-width: 100px;
+    height: 100px;
+    width: 100px;
+}
+
+.polecz
+{
+    background-color: #dda15e;
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+}
+.dpole, .biciewp, .droszada
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(kropka.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dpole:hover, .biciewp:hover, .droszada:hover
+{
+    transition: 0.2s;
+    filter: brightness(0.8);
+}
+
+.szach
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(szach.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#wysun
+{
+    display: flex;
+    position: absolute;
+    left: 0;
+    height: 100px;
+    width: 30px;
+    background-color: #dda15e;
+    border-radius: 0 15px 15px 0;
+    align-items: center;
+    justify-content: center;
+    color: #7f5539;
+    font-weight: 800;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#lewa
+{
+    display: flex;
+    position: absolute;
+    left: -300px;
+    height: 100px;
+    border-radius: 0 15px 15px 0;
+    width: 300px;
+    background-color: #dda15e;
+    transition: 0.08s;
+}
+
+#lewa:hover
+{
+    left: 0;
+    transition: 0.08s;
+}
+
+#start
+{
+    display: flex;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc((300px - 160px) / 2);
+    width: 160px;
+    height: 50px;
+    background-color: #7f5539;
+    color: #fefae0;
+    border-radius: 20px;
+    padding-top: 10px;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: czciona;
+    user-select: none;
+    cursor: pointer;
+}
+
+#wysun:hover + #lewa
+{
+    left: 0;
+    transition: 0.08s;
+}
+
+.figura
+{
+    cursor: pointer;
+}
+
+.bialy_k
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(bialy_k.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.bialy_h
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(bialy_h.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.bialy_g
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(bialy_g.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.bialy_s
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(bialy_s.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.bialy_w
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(biala_w.png);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.bialy_p
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(bialy_p.png);
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.czarny_k
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(czarny_k.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.czarny_h
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(czarny_h.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.czarny_g
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(czarny_g.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.czarny_s
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(czarny_s.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.czarny_w
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(czarna_w.png);
+    background-size: 78%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+
+.czarny_p
+{
+    width: 100px;
+    height: 100px;
+    background-image: url(czarny_p.png);
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}

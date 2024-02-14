@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Szachy</title>
+    <link rel="icon" type="image/x-icon" href="czarny_h.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body onclick="sprawdz(), szachmat(), pat()">
+    <div id="szachownica">
+        <div class="pole poleb" id="1"><div class="czarny_w figura" name="czarny"></div></div>
+        <div class="pole polecz" id="2"><div class="czarny_s figura" name="czarny"></div></div>
+        <div class="pole poleb" id="3"><div class="czarny_g figura" name="czarny"></div></div>
+        <div class="pole polecz" id="4"><div class="czarny_h figura" name="czarny"></div></div>
+        <div class="pole poleb" id="5"><div class="czarny_k figura" name="czarny"></div></div>
+        <div class="pole polecz" id="6"><div class="czarny_g figura" name="czarny"></div></div>
+        <div class="pole poleb" id="7"><div class="czarny_s figura" name="czarny"></div></div>
+        <div class="pole polecz" id="8"><div class="czarny_w figura" name="czarny"></div></div>
+        <div class="pole polecz" id="9"><div class="czarny_p figura" name="czarny"></div></div>
+        <div class="pole poleb" id="10"><div class="czarny_p figura" name="czarny"></div></div>
+        <div class="pole polecz" id="11"><div class="czarny_p figura" name="czarny"></div></div>
+        <div class="pole poleb" id="12"><div class="czarny_p figura" name="czarny"></div></div>
+        <div class="pole polecz" id="13"><div class="czarny_p figura" name="czarny"></div></div>
+        <div class="pole poleb" id="14"><div class="czarny_p figura" name="czarny"></div></div>
+        <div class="pole polecz" id="15"><div class="czarny_p figura" name="czarny"></div></div>
+        <div class="pole poleb" id="16"><div class="czarny_p figura" name="czarny"></div></div>
+        <div class="pole poleb" id="17"></div>
+        <div class="pole polecz" id="18"></div>
+        <div class="pole poleb" id="19"></div>
+        <div class="pole polecz" id="20"></div>
+        <div class="pole poleb" id="21"></div>
+        <div class="pole polecz" id="22"></div>
+        <div class="pole poleb" id="23"></div>
+        <div class="pole polecz" id="24"></div>
+        <div class="pole polecz" id="25"></div>
+        <div class="pole poleb" id="26"></div>
+        <div class="pole polecz" id="27"></div>
+        <div class="pole poleb" id="28"></div>
+        <div class="pole polecz" id="29"></div>
+        <div class="pole poleb" id="30"></div>
+        <div class="pole polecz" id="31"></div>
+        <div class="pole poleb" id="32"></div>
+        <div class="pole poleb" id="33"></div>
+        <div class="pole polecz" id="34"></div>
+        <div class="pole poleb" id="35"></div>
+        <div class="pole polecz" id="36"></div>
+        <div class="pole poleb" id="37"></div>
+        <div class="pole polecz" id="38"></div>
+        <div class="pole poleb" id="39"></div>
+        <div class="pole polecz" id="40"></div>
+        <div class="pole polecz" id="41"></div>
+        <div class="pole poleb" id="42"></div>
+        <div class="pole polecz" id="43"></div>
+        <div class="pole poleb" id="44"></div>
+        <div class="pole polecz" id="45"></div>
+        <div class="pole poleb" id="46"></div>
+        <div class="pole polecz" id="47"></div>
+        <div class="pole poleb" id="48"></div>
+        <div class="pole poleb" id="49"><div class="bialy_p figura" name="bialy"></div></div>
+        <div class="pole polecz" id="50"><div class="bialy_p figura" name="bialy"></div></div>
+        <div class="pole poleb" id="51"><div class="bialy_p figura" name="bialy"></div></div>
+        <div class="pole polecz" id="52"><div class="bialy_p figura" name="bialy"></div></div>
+        <div class="pole poleb" id="53"><div class="bialy_p figura" name="bialy"></div></div>
+        <div class="pole polecz" id="54"><div class="bialy_p figura" name="bialy"></div></div>
+        <div class="pole poleb" id="55"><div class="bialy_p figura" name="bialy"></div></div>
+        <div class="pole polecz" id="56"><div class="bialy_p figura" name="bialy"></div></div>
+        <div class="pole polecz" id="57"><div class="bialy_w figura" name="bialy"></div></div>
+        <div class="pole poleb" id="58"><div class="bialy_s figura" name="bialy"></div></div>
+        <div class="pole polecz" id="59"><div class="bialy_g figura" name="bialy"></div></div>
+        <div class="pole poleb" id="60"><div class="bialy_h figura" name="bialy"></div></div>
+        <div class="pole polecz" id="61"><div class="bialy_k figura" name="bialy"></div></div>
+        <div class="pole poleb" id="62"><div class="bialy_g figura" name="bialy"></div></div>
+        <div class="pole polecz" id="63"><div class="bialy_s figura" name="bialy"></div></div>
+        <div class="pole poleb" id="64"><div class="bialy_w figura" name="bialy"></div></div>
+    </div>
+    <div id="kordypion"><p>1</p><p>2</p><p>3</p><p>4</p><p>5</p><p>6</p><p>7</p><p>8</p></div>
+    <div id="kordypoziom"><p>a</p><p>b</p><p>c</p><p>d</p><p>e</p><p>f</p><p>g</p><p>h</p></div>
+    <div id="zegarczarny">10:00</div>
+    <div id="wykonane_ruchy"></div>
+    <div id="zegarbialy">10:00</div>
+    <div id="wysun">></div>
+    <div id="lewa">
+        <div id="start" onclick="start()">Start</div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+    <script src="szachowanie.js"></script>
+</body>
+</html>

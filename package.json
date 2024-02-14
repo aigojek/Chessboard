@@ -1,0 +1,25 @@
+{
+  "name": "szachy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "multi.js",
+  "scripts": {
+    "devStart": "nodemon multi.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "configurations": [
+    {
+      "skipFiles": ["<node_internals>/**", "${szachy}/node_modules/**/*.js"]
+    }
+]
+}
