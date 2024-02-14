@@ -3,7 +3,7 @@
 
 Chessboard with all chess functions detection
 
-Multiplayer made using socket.io
+node_modules: socket.io, express
 
 Please use Google Chrome, I have not tested the code on other browsers
 
