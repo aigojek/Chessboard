@@ -1,4 +1,4 @@
-required modules: socket.io
+required modules: socket.io, express
 
 1. run <sub>npm i</sub> in project's main folder
 2. run <sub>node multi.js</sub> in project's main folder
